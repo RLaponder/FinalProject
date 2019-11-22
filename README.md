@@ -39,19 +39,19 @@ Om bovenstaand probleem op te lossen, ga ik een platform maken waarop bewoners e
 ## Ontwerp
 
 ## Prerequisites
-#### Data sources
+### Data sources
 Waarschijnlijk zal ik geen data gebruiken vanuit externe bronnen. De data die uiteindelijk op de website te vinden is, zal toegevoegd worden door gebruikers. Het betreft onder andere de gegevens van gebruikers en de activiteiten die door gebruikers worden gecreëerd. 
 
-#### External component
+### External component
 * Django - Zal gebruikt worden voor inloggen, uitloggen en beheren van data door minimaal één superuser.
 * SQLite - Deze database wordt standaard gebruikt door Django en is dus het meest voor de hand liggend om te gebruiken.
 * Bootstrap - Zal gebruikt worden voor een groot deel van de layout.
 
-#### Similar web apps
+### Similar web apps
 Waarschijnlijk komt **Facebook** het meest in de buurt van mijn idee. Op Facebook is het ook mogelijk om groepen en evenementen aan te maken, maar het kent echter veel nadelen met betrekking tot mijn idee.
 * Om op de hoogte te zijn van alle medebewoners, moet iedereen elkaar als 'vriend' toevoegen. Dit is allereerst voor iedere bewoner ontzettend veel werk, waardoor de kans klein is dat iedereen het daadwerkelijk zal doen. Daarnaast weten veel bewoners niet van elkaars bestaan, waardoor ze elkaar ook niet op Facebook kunnen opzoeken.
 * Een beheerder zou iedereen kunnen toevoegen aan een Facebook-groep. Echter, ook alleen de beheerder zal hier vervolgens activiteiten in kunnen delen. Een andere mogelijkheid is dat een bewoner aan privé-evenement creëert en het vervolgens deelt in de groep. Dit is echter omslachtig en mist functionaliteit die ik wel op mijn pagina wil hebben. 
 
-#### Hardest parts
+### Hardest parts
 * Op dit moment is het moeilijkste naar mijn idee het laten werken van de **'overlast'-knop**. Een bewoner moet een bericht kunnen schrijven, wat vervolgens direct bij de organisator aankomt. Om dit op te lossen, ga ik onderzoeken wat de mogelijkheden zijn om berichten vanuit de website naar een e-mail te versturen.
 * Daarnaast zal ik veel met de database moeten werken. Ik zal dus goed moeten nadenken over hoe ik deze informatie wil verzamelen en opslaan.
