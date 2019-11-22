@@ -37,8 +37,13 @@ Om bovenstaand probleem op te lossen, ga ik een platform maken waarop bewoners e
 * Wanneer iemand een 'overlast'-bericht heeft ontvangen, kan die persoon hier op reageren. 
 
 ## Ontwerp
+### Index
 ![Homepagina](doc/index_image.png)
+
+### Profiel
 ![Pagina van persoonlijk profiel](doc/profiel_image.png)
+
+### Activiteiten
 ![Activiteitenpagina](doc/activiteiten_image.png)
 
 ## Prerequisites
