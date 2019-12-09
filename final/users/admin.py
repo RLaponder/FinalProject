@@ -9,7 +9,7 @@ from .models import CustomUser
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
     fieldsets = UserAdmin.fieldsets + (
-            (None, {'fields': ('straat', 'huisnummer', 'postcode', 'woonplaats')}),
+            (None, {'fields': ('geboortedatum', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'gebouw', 'verdieping')}),
     )
 
 admin.site.register(CustomUser, CustomUserAdmin)

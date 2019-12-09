@@ -4,30 +4,38 @@ from django.contrib.auth import authenticate, login, logout
 from .models import *
 from users.models import *
 from django.urls import reverse
+from socialieven.views import *
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
 
 def login_view(request):
     if request.user.is_authenticated:
         context = {
-            "loggedin": True
+            "loggedin": True,
+            "message": "Het lijkt erop dat je al ingelogd bent."
         }
-        return HttpResponse("Hello, you are already logged in.")
+        return render(request, "users/error.html", context)
     
     if request.method == "POST": 
-        username = request.POST.get("username")
+        email = request.POST.get("email")
         password = request.POST.get("password")
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponse("Hello, world. You're at the polls index.")
+            return render(request, "users/index.html")
         else:
-            return render(request, "users/login.html", {"message": "Invalid credentials."})
-
+            context = {
+                "loggedin": False,
+                "message": "Het ingevoerde e-mail adres of wachtwoord is onjuist."
+            }
+            return render(request, "users/error.html", context)
     return render(request, "users/login.html")
 
 def logout_view(request):
     logout(request)
-    return render(request, "users/login.html", {"message": "Logged out."})
+    return redirect(index)
+
+def register(request):
+    return render(request, "users/register.html")
+
+def profiel(request):
+    return render(request, "users/profiel.html")
