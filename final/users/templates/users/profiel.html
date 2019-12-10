@@ -5,4 +5,13 @@
 {% endblock %}
 
 {% block body %}
+<div>Naam: {{ user.first_name }} {{ user.last_name }}</div>
+<div>Gebruikersnaam: {{ user.username }}</div>
+<div>Geboortedatum: {{ user.geboortedatum }}</div>
+<div> <b>Adresgegevens</b>
+    <div>{{ user.straat }} {{ user.huisnummer }}</div>
+    <div>{{ user.postcode }} {{ user.woonplaats }}</div>
+    <div>Gebouw {{ user.gebouw }}</div>
+    <div>Verdieping {{ user.verdieping }}</div>
+</div>
 {% endblock %}

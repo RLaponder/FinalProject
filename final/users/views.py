@@ -5,37 +5,55 @@ from .models import *
 from users.models import *
 from django.urls import reverse
 from socialieven.views import *
+import datetime
 
+# Use custom User model.
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
-def login_view(request):
-    if request.user.is_authenticated:
-        context = {
-            "loggedin": True,
-            "message": "Het lijkt erop dat je al ingelogd bent."
-        }
-        return render(request, "users/error.html", context)
-    
-    if request.method == "POST": 
-        email = request.POST.get("email")
-        password = request.POST.get("password")
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return render(request, "users/index.html")
-        else:
-            context = {
-                "loggedin": False,
-                "message": "Het ingevoerde e-mail adres of wachtwoord is onjuist."
-            }
-            return render(request, "users/error.html", context)
-    return render(request, "users/login.html")
 
 def logout_view(request):
+    # Log user out and go to index.
     logout(request)
     return redirect(index)
 
 def register(request):
+    # If a user submits the register form, do the following.
+    if request.method == "POST": 
+        # Get all the information from the register for and create user.
+        user = User.objects.create_user(username=request.POST["gebruikersnaam"], email=request.POST["email1"], password=request.POST["wachtwoord1"])
+        user.first_name = request.POST["voornaam"]
+        user.last_name = request.POST["achternaam"]
+        user.geboortedatum = request.POST["geboortedatum"]
+        user.straat = request.POST["straat"]
+        user.huisnummer = int(request.POST["huisnummer"])
+        user.postcode = request.POST["postcode"]
+        user.woonplaats = request.POST["woonplaats"]
+        user.gebouw = int(request.POST["gebouw"])
+        user.verdieping = int(request.POST["verdieping"])
+        user.save()
+        
+        # Succesfull registration, go to index.
+        context = {
+            "loggedin": False,
+            "message": "You have succesfully registered."
+        }
+        return render(request, "users/index.html", context)
+    
+    # If a user did not (yet) register, show the register form.
     return render(request, "users/register.html")
 
 def profiel(request):
-    return render(request, "users/profiel.html")
+    # Go to login page if the user has not logged in.
+    if not request.user.is_authenticated:
+        context = {
+            "loggedin": False
+        }
+        return render(request, "users/index.html", context)
+    
+    # Show the profile of the current user.
+    context = {
+        "user": request.user,
+        "loggedin": True
+    }
+    return render(request, "users/profiel.html", context)

@@ -30,11 +30,11 @@
                             Login/Registreer
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <form class="px-4 py-3" action="login" method="POST">
+                            <form class="px-4 py-3" action="/" method="POST">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <label for="email">E-mail adres</label>
-                                    <input type="text" name="email" class="form-control" id="email" placeholder="email@voorbeeld.com">
+                                    <label for="username">Gebruikersnaam</label>
+                                    <input type="text" name="username" class="form-control" id="email" placeholder="Gebruikersnaam">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Wachtwoord</label>
@@ -68,6 +68,13 @@
                 </ul>
             </div>
         </nav>
+
+    {% if message %}
+    <div>
+        {{ message }}
+    </div>    
+    {% endif %}
+    
     {% block body %}{% endblock %}
     <footer>
     </footer>

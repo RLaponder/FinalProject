@@ -4,19 +4,20 @@ from django.conf import settings
 from users.models import CustomUser
 
 class Activiteit(models.Model):
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, null=True)
     gebruiker = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    datum = models.DateField()
-    starttijd = models.CharField(max_length=5)
-    eindtijd = models.CharField(max_length=5)
-    straat = models.CharField(max_length=64)
-    huisnummer = huisnummer = models.IntegerField()
-    postcode = models.CharField(max_length=6)
-    plaats = models.CharField(max_length=64)
-    gebouw = models.IntegerField(blank=True)
-    verdieping = models.IntegerField(blank=True)
-    categorie = models.CharField(max_length=64)
-    uitgenodigd = models.BooleanField()
+    datum = models.DateField(null=True)
+    starttijd = models.CharField(max_length=5, null=True)
+    eindtijd = models.CharField(max_length=5, null=True)
+    straat = models.CharField(max_length=64, null=True)
+    huisnummer = models.IntegerField(null=True)
+    postcode = models.CharField(max_length=6, null=True)
+    plaats = models.CharField(max_length=64, null=True)
+    gebouw = models.IntegerField(blank=True, null=True)
+    verdieping = models.IntegerField(blank=True, null=True)
+    categorie = models.CharField(max_length=64, null=True)
+    uitgenodigd = models.BooleanField(null=True)
+    beschrijving = models.CharField(max_length=2048, null=True)
     # Nog toevoegen: personen die aanwezig zijn. ManyToManyField??
 
     def __str__(self):
