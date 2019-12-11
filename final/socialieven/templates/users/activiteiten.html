@@ -5,4 +5,38 @@
 {% endblock %}
 
 {% block body %}
+{% for activiteit in activiteiten %}
+<div>
+    <div>{{ activiteit.categorie }}</div>
+    <div>{{ activiteit.name }}</div>
+    <div>{{ activiteit.gebruiker.first_name }}</div>
+    <div>datum: {{ activiteit.datum }}</div>
+    <div>van {{ activiteit.starttijd }} tot {{ activiteit.eindtijd }}</div>
+    <div><b>Locatie:</b></div>
+    <div>{{ activiteit.straat }} {{ activiteit.huisnummer }}</div>
+    <div>{{ activiteit.postcode }} {{ activiteit.plaats }}</div>
+    {% if activiteit.gebouw %}
+    <div>gebouw: {{ activiteit.gebouw }}</div>
+    {% endif %}
+    {% if activiteit.verdieping %}
+    <div>verdieping: {{ activiteit.verdieping }}</div>
+    {% endif %}
+    <div>Zijn medebewoners uitgenodigd: 
+    {% if activiteit.uitgenodigd == True %}
+    Ja
+    {% endif %}
+    {% if activiteit.uitgenodigd == False %}
+    Nee
+    {% endif %}</div>
+    <div>{{ activiteit.beschrijving }}</div>
+    {% for aanmelding in aanmeldingen %}
+        {% if activiteit == aanmelding.activiteit %}
+        <a class="btn btn-outline-info" href="{% url 'afmelden' activiteit.id %}" role="button">Afmelden</a>
+        {% endif %}
+    {% endfor %}
+    <a class="btn btn-outline-info" href="{% url 'aanmelden' activiteit.id %}" role="button">Aanmelden</a>
+    <a class="btn btn-outline-info" href="{% url 'overlast' activiteit.id %}" role="button">Overlast</a>
+</div> 
+<br>
+{% endfor %}
 {% endblock %}

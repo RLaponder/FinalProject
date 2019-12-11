@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from users.models import CustomUser
 
+# Creates the activities.
 class Activiteit(models.Model):
     name = models.CharField(max_length=128, null=True)
     gebruiker = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -18,7 +19,20 @@ class Activiteit(models.Model):
     categorie = models.CharField(max_length=64, null=True)
     uitgenodigd = models.BooleanField(null=True)
     beschrijving = models.CharField(max_length=2048, null=True)
-    # Nog toevoegen: personen die aanwezig zijn. ManyToManyField??
 
     def __str__(self):
-        return f"{self.name} van {self.gebruiker} op {self.datum}"
+        return f"{self.id} {self.name} van {self.gebruiker} op {self.datum}"
+
+    class Meta:
+        ordering = ['datum', 'starttijd']
+
+# Keeps track of who is registered for which activity.
+class Aanmelding(models.Model):
+    activiteit = models.ForeignKey(Activiteit, on_delete=models.CASCADE)
+    gebruiker = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.gebruiker} gaat naar {self.activiteit}"
+    
+    class Meta:
+        ordering = ['activiteit']

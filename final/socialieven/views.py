@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from .models import *
 from users.models import *
 from django.urls import reverse
+from django.contrib import messages
 
 def index(request):
     # If user tries to login, do the following.
@@ -43,7 +44,15 @@ def activiteiten(request):
             "loggedin": False
         }
         return render(request, "users/index.html", context)
-    return render(request, "users/activiteiten.html")
+    
+    # Get all the activities from database and show them.
+    context = {
+        "activiteiten": Activiteit.objects.all(),
+        "aanmeldingen": Aanmelding.objects.filter(gebruiker=request.user),
+        "loggedin": True
+    }
+    print(context["aanmeldingen"])
+    return render(request, "users/activiteiten.html", context)
 
 def nieuwe_activiteit(request):
     # If current user is not logged in, go to index.
@@ -63,11 +72,14 @@ def nieuwe_activiteit(request):
         activiteit.starttijd = request.POST["starttijd"]
         activiteit.eindtijd = request.POST["eindtijd"]
         activiteit.straat = request.POST["straat"]
-        activiteit.huisnummer = int(request.POST["huisnummer"])
+        if request.POST["huisnummer"] != '':
+            activiteit.huisnummer = int(request.POST["huisnummer"])
         activiteit.postcode = request.POST["postcode"]
         activiteit.plaats = request.POST["plaats"]
-        activiteit.gebouw = int(request.POST["gebouw"])
-        activiteit.verdieping = int(request.POST["verdieping"])
+        if request.POST["gebouw"] != '':
+            activiteit.gebouw = int(request.POST["gebouw"])
+        if request.POST["verdieping"] != '':
+            activiteit.verdieping = int(request.POST["verdieping"])
         activiteit.categorie = request.POST["categorie"]
         if request.POST["uitgenodigd"] == "Ja":
             activiteit.uitgenodigd = True
@@ -75,6 +87,10 @@ def nieuwe_activiteit(request):
             activiteit.uitgenodigd = False
         activiteit.beschrijving = request.POST["beschrijving"]
         activiteit.save()
+
+        # Add the user to their own activity.
+        aanmelding = Aanmelding(activiteit=activiteit, gebruiker=request.user)
+        aanmelding.save()
 
         context = {
             "message": "Succes! Je activiteit is toegevoegd.",
@@ -86,4 +102,73 @@ def nieuwe_activiteit(request):
     context = {
         "loggedin": True
     }
-    return render(request, "users/nieuwe_activiteit.html")
+    return render(request, "users/nieuwe_activiteit.html", context)
+
+def aanmelden(request, id):
+    # If current user is not logged in, go to index.
+    if not request.user.is_authenticated:
+        context = {
+            "loggedin": False
+        }
+        return render(request, "users/index.html", context)
+    
+    # Get the activity that the user wants to register to.
+    activiteit = Activiteit.objects.get(id=id)
+
+    # Get all the registrations for the user.
+    aanmeldingen = Aanmelding.objects.filter(gebruiker=request.user)
+    
+    # Check whether the user already registered for this activity. If yes, show message.
+    for aanmelding in aanmeldingen:
+        if activiteit == aanmelding.activiteit :
+            context = {
+                "loggedin": True,
+                "message": "Oeps! Je hebt je al aangemeld voor deze activiteit..."
+            }
+            return render(request, "users/activiteiten.html", context)
+    
+    # Register the user to the activity.
+    aanmelding = Aanmelding(activiteit=activiteit, gebruiker=request.user)
+    aanmelding.save()
+    
+    # Get context and render webpage.
+    context = {
+            "message": "Succes! Je bent je aangemeld.",
+            "activiteiten": Activiteit.objects.all(),
+            "aanmeldingen": Aanmelding.objects.filter(gebruiker=request.user),
+            "loggedin": True
+    }
+    return render(request, "users/activiteiten.html", context)
+
+def afmelden(request, id):
+    # If current user is not logged in, go to index.
+    if not request.user.is_authenticated:
+        context = {
+            "loggedin": False
+        }
+        return render(request, "users/index.html", context)
+    
+    # Get the activity that the user wants to unregister to.
+    activiteit = Activiteit.objects.get(id=id)
+    
+    # Delete the registration for this activity.
+    aanmelding = Aanmelding.objects.get(activiteit=activiteit, gebruiker=request.user)
+    aanmelding.delete()
+    
+    # Get context and render webpage.
+    context = {
+            "message": "Succes! Je bent afgemeld.",
+            "activiteiten": Activiteit.objects.all(),
+            "aanmeldingen": Aanmelding.objects.filter(gebruiker=request.user),
+            "loggedin": True
+    }
+    return render(request, "users/activiteiten.html", context)
+
+def overlast(request, activiteit):
+    # If current user is not logged in, go to index.
+    if not request.user.is_authenticated:
+        context = {
+            "loggedin": False
+        }
+        return render(request, "users/index.html", context)
+    return render(request, "users/activiteiten.html", context)

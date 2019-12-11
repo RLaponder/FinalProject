@@ -21,7 +21,7 @@
                     </li>
                     {% if loggedin %}
                     <li class="nav-item">
-                        <a class="nav-link" href="profiel">Profiel</a>
+                        <a class="nav-link" href="{% url 'profiel' %}">Profiel</a>
                     </li>
                     {% endif %}
                     {% if loggedin == False %}
@@ -43,7 +43,7 @@
                                 <button type="submit" class="btn btn-outline-primary">Login</button>
                             </form>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="register">
+                            <a class="dropdown-item" href="{% url 'register' %}">
                                 Nieuw hier? Registreer!
                             </a>
                         </div>
@@ -55,14 +55,14 @@
                         Activiteiten
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="nieuwe_activiteit">Nieuwe activiteit</a>
-                            <a class="dropdown-item" href="activiteiten">Alle activiteiten</a>
+                            <a class="dropdown-item" href="{% url 'nieuwe activiteit' %}">Nieuwe activiteit</a>
+                            <a class="dropdown-item" href="{% url 'activiteiten' %}">Alle activiteiten</a>
                         </div>
                     </li>
                     {% endif %}
                     {% if loggedin %}
                     <li class="nav-item">
-                        <a class="nav-link" href="logout">Log uit</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Log uit</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -70,11 +70,11 @@
         </nav>
 
     {% if message %}
-    <div>
+    <div class="alert alert-info" role="alert">
         {{ message }}
-    </div>    
+    </div>
     {% endif %}
-    
+
     {% block body %}{% endblock %}
     <footer>
     </footer>
