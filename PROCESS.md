@@ -30,3 +30,28 @@ moest zijn
 href="{% url 'nieuwe activiteit' %}"
 ```
 * Probleem wat nog niet is opgelost: Het lukt me nog niet om de 'aanmelden'-knop te verwijderen wanneer een gebruiker zich al voor die activiteit heeft aangemeld.
+
+## 12-12-2019
+* Mails verzenden met Django:
+    * Maak een e-mail adres. Nadeel op dit moment is dat ik nog niet weet hoe ik mijn gegevens (mailadres en wachtwoord) kan verbergen.
+    * in settings.py:
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'socialieven@gmail.com'
+EMAIL_HOST_PASSWORD = 'Socialieven1!'
+```
+    * in views.py:
+```python
+subject = 'Melding overlast'
+message = request.POST["beschrijving"]
+email_from = settings.EMAIL_HOST_USER
+recipient_list = ['socialieven@gmail.com',]
+send_mail( subject, message, email_from, recipient_list )
+
+```
+* Gebruikers kunnen zich alleen registreren wanneer ze in één van de juiste straten wonen.
+    * Ik heb een Straat model gemaakt en daarin objecten gemaakt die overeenkomen met de straten van het wooncomplex.
+    * Wanneer een gebruiker zich probeert te registeren, controleert Python of de door hen ingevoerde straat overeenkomt met een straat-object in de database.
