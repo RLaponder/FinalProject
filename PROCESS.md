@@ -43,7 +43,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'socialieven@gmail.com'
 EMAIL_HOST_PASSWORD = 'Socialieven1!'
 ```
+    
     * in views.py:
+
+    
 ```python
 subject = 'Melding overlast'
 message = request.POST["beschrijving"]
