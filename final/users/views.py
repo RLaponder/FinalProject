@@ -20,15 +20,26 @@ def logout_view(request):
 def register(request):
     # If a user submits the register form, do the following.
     if request.method == "POST": 
+        # Check if user actually lives in one of the right streets.
+        straat = request.POST["straat"].capitalize()
+        try:
+            straat = Straat.objects.get(straatnaam=straat)
+        except:
+            context = {
+                "message": "Helaas. Om gebruik te maken van SociaLieven, moet je bewoner zijn van Lieven.",
+                "loggedin": False
+            }
+            return render(request, "users/register.html", context)         
+
         # Get all the information from the register for and create user.
         user = User.objects.create_user(username=request.POST["gebruikersnaam"], email=request.POST["email1"], password=request.POST["wachtwoord1"])
-        user.first_name = request.POST["voornaam"]
-        user.last_name = request.POST["achternaam"]
+        user.first_name = request.POST["voornaam"].capitalize()
+        user.last_name = request.POST["achternaam"].capitalize()
         user.geboortedatum = request.POST["geboortedatum"]
-        user.straat = request.POST["straat"]
+        user.straat = request.POST["straat"].capitalize()
         user.huisnummer = int(request.POST["huisnummer"])
         user.postcode = request.POST["postcode"]
-        user.woonplaats = request.POST["woonplaats"]
+        user.woonplaats = request.POST["woonplaats"].capitalize()
         user.gebouw = int(request.POST["gebouw"])
         user.verdieping = int(request.POST["verdieping"])
         user.save()

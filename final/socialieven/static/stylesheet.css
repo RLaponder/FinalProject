@@ -5,3 +5,7 @@ nav {
 a.nav-link {
     color: white !important;
 }
+
+div.form-group {
+    width: 50vw !important;
+}

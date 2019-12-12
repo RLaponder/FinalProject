@@ -13,3 +13,9 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+class Straat(models.Model):
+    straatnaam = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.straatnaam

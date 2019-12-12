@@ -36,3 +36,15 @@ class Aanmelding(models.Model):
     
     class Meta:
         ordering = ['activiteit']
+
+# Keeps track of nuisance reports.
+class Overlast(models.Model):
+    activiteit = models.ForeignKey(Activiteit, on_delete=models.CASCADE)
+    gebruiker = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    beschrijving = models.CharField(max_length=2048)
+
+    def __str__(self):
+        return f"Melding van {self.gebruiker} voor {self.activiteit}"
+
+    class Meta:
+        ordering = ['activiteit']

@@ -1,93 +1,93 @@
 {% extends "users/base.html" %}
 
 {% block title %}
-    Register
+    Registreren
 {% endblock %}
 
 {% block body %}
-<h1>Register</h1>
+<div class="d-flex justify-content-center"><h1>Registreren</h1></div>
 
 <!-- Registration form -->
-<form class="form-horizontal" action="register" onSubmit="return checkForm(this)" method="POST">
-    {% csrf_token %}
-    <!-- voornaam -->
-    <div class="u-form-group u-form-name">
-        <label for="voornaam" class="u-form-control-hidden u-label">Voornaam</label>
-        <input type="text" placeholder="Voornaam" id="voornaam" name="voornaam" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- achternaam -->
-    <div class="u-form-group u-form-name">
-        <label for="achternaam" class="u-form-control-hidden u-label">Achternaam</label>
-        <input type="text" placeholder="Achternaam" id="achternaam" name="achternaam" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- gebruikersnaam -->
-    <div class="u-form-group u-form-name">
-        <label for="gebruikersnaam" class="u-form-control-hidden u-label">Gebruikersnaam</label>
-        <input type="text" placeholder="Gebruikersnaam" id="gebruikernaam" name="gebruikersnaam" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- email -->
-    <div class="u-form-group u-form-name">
-        <label for="email" class="u-form-control-hidden u-label">E-mail adres</label>
-        <input type="text" placeholder="email@voorbeeld.com" id="email" name="email1" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- bevestig email -->
-    <div class="u-form-group u-form-name">
-        <label for="email" class="u-form-control-hidden u-label">Herhaal E-mail adres</label>
-        <input type="text" placeholder="email@voorbeeld.com" id="email" name="email2" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- wachtwoord -->
-    <div class="u-form-group u-form-name">
-        <label for="wachtwoord" class="u-form-control-hidden u-label">Wachtwoord</label>
-        <input type="password" placeholder="Wachtwoord" id="wachtwoord" name="wachtwoord1" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- bevestig wachtwoord -->
-    <div class="u-form-group u-form-name">
-        <label for="wachtwoord" class="u-form-control-hidden u-label">Herhaal wachtwoord</label>
-        <input type="password" placeholder="Herhaal wachtwoord" id="wachtwoord" name="wachtwoord2" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- geboortedatum -->
-    <div class="u-form-group u-form-name">
-        <label for="geboortedatum" class="u-form-control-hidden u-label">Geboortedatum</label>
-        <input type="date" placeholder="Geboortedatum" id="geboortedatum" name="geboortedatum" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- straat -->
-    <div class="u-form-group u-form-name">
-        <label for="straat" class="u-form-control-hidden u-label">Straat</label>
-        <input type="text" placeholder="Straat" id="straat" name="straat" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- huisnummer -->
-    <div class="u-form-group u-form-name">
-        <label for="huisnummer" class="u-form-control-hidden u-label">Huisnummer</label>
-        <input type="number" placeholder="Huisnummer" id="huisnummer" name="huisnummer" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- postcode -->
-    <div class="u-form-group u-form-name">
-        <label for="postcode" class="u-form-control-hidden u-label">Postcode</label>
-        <input type="text" placeholder="Postcode" id="postcode" name="postcode" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- woonplaats -->
-    <div class="u-form-group u-form-name">
-        <label for="woonplaats" class="u-form-control-hidden u-label">Woonplaats</label>
-        <input type="text" placeholder="Woonplaats" id="woonplaats" name="woonplaats" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- gebouw -->
-    <div class="u-form-group u-form-name">
-        <label for="gebouw" class="u-form-control-hidden u-label">Gebouw</label>
-        <input type="number" placeholder="Bijvoorbeeld '2' voor Lieven 2" id="gebouw" name="gebouw" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- verdieping -->
-    <div class="u-form-group u-form-name">
-        <label for="verdieping" class="u-form-control-hidden u-label">Verdieping</label>
-        <input type="number" placeholder="Bijvoorbeeld '0' voor begane grond" id="verdieping" name="verdieping" class="u-border-1 u-border-grey-5 u-border-radius-25 u-input u-input-round" required="">
-    </div>
-    <!-- submit -->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="save"></label>
-        <div class="col-md-8">
-            <button id="save" name="save" class="submit">Register</button>
+<div class="d-flex justify-content-center">
+    <form class="form-horizontal" action="register" onSubmit="return checkForm(this)" method="POST">
+        {% csrf_token %}
+        <!-- voornaam -->
+        <div class="form-group">
+            <label for="voornaam">Voornaam</label>
+            <input type="text" placeholder="Voornaam" id="voornaam" name="voornaam" class="form-control" required="">
         </div>
-    </div>
-</form>
+        <!-- achternaam -->
+        <div class="form-group">
+            <label for="achternaam">Achternaam</label>
+            <input type="text" placeholder="Achternaam" id="achternaam" name="achternaam" class="form-control" required="">
+        </div>
+        <!-- gebruikersnaam -->
+        <div class="form-group">
+            <label for="gebruikersnaam">Gebruikersnaam</label>
+            <input type="text" placeholder="Gebruikersnaam" id="gebruikernaam" name="gebruikersnaam" class="form-control" required="">
+        </div>
+        <!-- email -->
+        <div class="form-group">
+            <label for="email">E-mail adres</label>
+            <input type="text" placeholder="email@voorbeeld.com" id="email" name="email1" class="form-control" required="">
+        </div>
+        <!-- bevestig email -->
+        <div class="form-group">
+            <label for="email">Herhaal E-mail adres</label>
+            <input type="text" placeholder="email@voorbeeld.com" id="email" name="email2" class="form-control" required="">
+        </div>
+        <!-- wachtwoord -->
+        <div class="form-group">
+            <label for="wachtwoord">Wachtwoord</label>
+            <input type="password" placeholder="Wachtwoord" id="wachtwoord" name="wachtwoord1" class="form-control" required="">
+        </div>
+        <!-- bevestig wachtwoord -->
+        <div class="form-group">
+            <label for="wachtwoord">Herhaal wachtwoord</label>
+            <input type="password" placeholder="Herhaal wachtwoord" id="wachtwoord" name="wachtwoord2" class="form-control" required="">
+        </div>
+        <!-- geboortedatum -->
+        <div class="form-group">
+            <label for="geboortedatum">Geboortedatum</label>
+            <input type="date" placeholder="Geboortedatum" id="geboortedatum" name="geboortedatum" class="form-control" required="">
+        </div>
+        <!-- straat -->
+        <div class="form-group">
+            <label for="straat">Straat</label>
+            <input type="text" placeholder="Straat" id="straat" name="straat" class="form-control" required="">
+        </div>
+        <!-- huisnummer -->
+        <div class="form-group">
+            <label for="huisnummer">Huisnummer</label>
+            <input type="number" placeholder="Huisnummer" id="huisnummer" name="huisnummer" class="form-control" required="">
+        </div>
+        <!-- postcode -->
+        <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" placeholder="Postcode" id="postcode" name="postcode" class="form-control" required="">
+        </div>
+        <!-- woonplaats -->
+        <div class="form-group">
+            <label for="woonplaats">Woonplaats</label>
+            <input type="text" placeholder="Woonplaats" id="woonplaats" name="woonplaats" class="form-control" required="">
+        </div>
+        <!-- gebouw -->
+        <div class="form-group">
+            <label for="gebouw">Gebouw</label>
+            <input type="number" placeholder="Bijvoorbeeld '2' voor Lieven 2" id="gebouw" name="gebouw" class="form-control" required="">
+        </div>
+        <!-- verdieping -->
+        <div class="form-group">
+            <label for="verdieping">Verdieping</label>
+            <input type="number" placeholder="Bijvoorbeeld '0' voor begane grond" id="verdieping" name="verdieping" class="form-control" required="">
+        </div>
+        <!-- submit -->
+        <div class="form-group">
+            <label for="save"></label>
+            <button id="save" name="save" class="submit btn btn-info form-control">Register</button>
+        </div>
+    </form>
+</div>
     
 <script> 
     // Function to check whether both entered passwords are the same

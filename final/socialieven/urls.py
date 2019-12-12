@@ -7,5 +7,5 @@ urlpatterns = [
     path('nieuwe_activiteit', views.nieuwe_activiteit, name='nieuwe activiteit'),
     path('aanmelden/<int:id>', views.aanmelden, name='aanmelden'),
     path('afmelden/<int:id>', views.afmelden, name='afmelden'),
-    path('overlast/<str:activiteit>', views.overlast, name='overlast')
+    path('overlast/<int:id>', views.overlast, name='overlast')
 ]

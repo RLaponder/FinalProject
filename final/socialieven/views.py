@@ -5,6 +5,8 @@ from .models import *
 from users.models import *
 from django.urls import reverse
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 def index(request):
     # If user tries to login, do the following.
@@ -164,11 +166,45 @@ def afmelden(request, id):
     }
     return render(request, "users/activiteiten.html", context)
 
-def overlast(request, activiteit):
+def overlast(request, id):
     # If current user is not logged in, go to index.
     if not request.user.is_authenticated:
         context = {
             "loggedin": False
         }
         return render(request, "users/index.html", context)
-    return render(request, "users/activiteiten.html", context)
+    # If a user reports a nuisance, do the following.
+    if request.method == "POST": 
+        
+        # Add report to database.
+        activiteit = Activiteit.objects.get(id=id)
+        beschrijving = request.POST["beschrijving"]
+        melding = Overlast(activiteit=activiteit, gebruiker=request.user, beschrijving=beschrijving)
+        melding.save()
+        gebruiker = activiteit.gebruiker.first_name
+
+        # Create a message and send it via email.
+        subject = 'Melding overlast'
+        message_header = (
+        f"""Beste {gebruiker},\n\nEen medebewoner geeft aan overlast te ervaren van de door jou georganiseerde activiteit en stuurt het volgende bericht:\n\n""")
+        message_body = f"{beschrijving}"
+        message_footer = f"\n\nAfzender: {request.user.first_name} {request.user.last_name}"
+        message = f"{message_header}{message_body}{message_footer}"
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [activiteit.gebruiker.email]
+        send_mail(subject, message, email_from, recipient_list)
+
+        context = {
+            "loggedin": True,
+            "message": "Succes! Je melding is verwerkt en de organisator zal spoedig je bericht ontvangen.",
+            "activiteit": Activiteit.objects.get(id=id),
+            "aanmeldingen": Aanmelding.objects.filter(gebruiker=request.user)
+        }
+        return render(request, "users/overlast.html", context)
+    
+    context = {
+        "loggedin": True,
+        "activiteit": Activiteit.objects.get(id=id)
+    }
+    
+    return render(request, "users/overlast.html", context)
