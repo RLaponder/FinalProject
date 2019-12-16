@@ -8,8 +8,9 @@
 <div class="d-flex justify-content-center"><h1>Registreren</h1></div>
 
 <!-- Registration form -->
+
 <div class="d-flex justify-content-center">
-    <form class="form-horizontal" action="register" onSubmit="return checkForm(this)" method="POST">
+    <form class="form-horizontal" action="register" onSubmit="return checkForm(this)" method="POST" style="margin-bottom:5vw; color:white">
         {% csrf_token %}
         
         <!-- voornaam -->
@@ -97,9 +98,9 @@
         </div>
         
         <!-- submit -->
-        <div class="form-group register">
+        <div class="form-group register" style="text-align:center; margin-top:5vw">
             <label for="save"></label>
-            <button id="save" name="save" class="submit btn btn-outline-info">Registreer</button>
+            <button id="save" name="save" class="submit btn btn-info">Registreer</button>
         </div>
     </form>
 </div>
