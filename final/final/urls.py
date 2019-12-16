@@ -1,3 +1,14 @@
+# **************************************************************************************
+# urls.py
+#
+# Web App Studio
+# Final project
+#
+# Robin Laponder
+# 11892439
+#
+# **************************************************************************************
+
 """final URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:

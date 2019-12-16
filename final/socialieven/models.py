@@ -1,3 +1,14 @@
+# **************************************************************************************
+# models.py
+#
+# Web App Studio
+# Final project
+#
+# Robin Laponder
+# 11892439
+#
+# **************************************************************************************
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings

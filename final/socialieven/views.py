@@ -1,12 +1,22 @@
+# **************************************************************************************
+# views.py
+#
+# Web App Studio
+# Final project
+#
+# Robin Laponder
+# 11892439
+#
+# **************************************************************************************
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from .models import *
 from users.models import *
-from django.urls import reverse
-from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+
 
 def index(request):
     # If user tries to login, do the following.
@@ -25,7 +35,7 @@ def index(request):
                 "loggedin": False,
                 "message": "Het ingevoerde e-mail adres of wachtwoord is onjuist."
             }
-            return render(request, "users/error.html", context)
+            return render(request, "users/index.html", context)
     
     # Check whether a user is logged in, and go to index.
     if not request.user.is_authenticated:
@@ -38,6 +48,7 @@ def index(request):
             "loggedin": True
         }
     return render(request, "users/index.html", context)
+
 
 def activiteiten(request):
     # If current user is not logged in, go to index.
@@ -53,8 +64,8 @@ def activiteiten(request):
         "aanmeldingen": Aanmelding.objects.filter(gebruiker=request.user),
         "loggedin": True
     }
-    print(context["aanmeldingen"])
     return render(request, "users/activiteiten.html", context)
+
 
 def nieuwe_activiteit(request):
     # If current user is not logged in, go to index.
@@ -68,6 +79,7 @@ def nieuwe_activiteit(request):
     if request.method == "POST": 
         # Create a new activity for this user.
         activiteit = Activiteit(gebruiker=request.user)
+        
         # Add all the entered information from the form to the created activity.
         activiteit.name = request.POST["naam"]
         activiteit.datum = request.POST["datum"]
@@ -106,6 +118,7 @@ def nieuwe_activiteit(request):
     }
     return render(request, "users/nieuwe_activiteit.html", context)
 
+
 def aanmelden(request, id):
     # If current user is not logged in, go to index.
     if not request.user.is_authenticated:
@@ -142,6 +155,7 @@ def aanmelden(request, id):
     }
     return render(request, "users/activiteiten.html", context)
 
+
 def afmelden(request, id):
     # If current user is not logged in, go to index.
     if not request.user.is_authenticated:
@@ -166,6 +180,7 @@ def afmelden(request, id):
     }
     return render(request, "users/activiteiten.html", context)
 
+
 def overlast(request, id):
     # If current user is not logged in, go to index.
     if not request.user.is_authenticated:
@@ -173,9 +188,9 @@ def overlast(request, id):
             "loggedin": False
         }
         return render(request, "users/index.html", context)
+    
     # If a user reports a nuisance, do the following.
     if request.method == "POST": 
-        
         # Add report to database.
         activiteit = Activiteit.objects.get(id=id)
         beschrijving = request.POST["beschrijving"]
@@ -194,6 +209,7 @@ def overlast(request, id):
         recipient_list = [activiteit.gebruiker.email]
         send_mail(subject, message, email_from, recipient_list)
 
+        # Get context and render webpage.
         context = {
             "loggedin": True,
             "message": "Succes! Je melding is verwerkt en de organisator zal spoedig je bericht ontvangen.",
@@ -202,9 +218,42 @@ def overlast(request, id):
         }
         return render(request, "users/overlast.html", context)
     
+    # Get context and render webpage.
     context = {
         "loggedin": True,
         "activiteit": Activiteit.objects.get(id=id)
     }
-    
     return render(request, "users/overlast.html", context)
+
+def mijn_activiteiten(request):
+    # If current user is not logged in, go to index.
+    if not request.user.is_authenticated:
+        context = {
+            "message": "Helaas! Je moet ingelogd zijn om deze pagina te bezoeken.",
+            "loggedin": False
+        }
+        return render(request, "users/index.html", context)
+    
+    # Show all activities created by the current user.
+    context = {
+        "loggedin": True,
+        "activiteiten": Activiteit.objects.filter(gebruiker=request.user)
+    }
+    return render(request, "users/mijn_activiteiten.html", context)
+
+
+def mijn_aanmeldingen(request):
+    # If current user is not logged in, go to index.
+    if not request.user.is_authenticated:
+        context = {
+            "message": "Helaas! Je moet ingelogd zijn om deze pagina te bezoeken.",
+            "loggedin": False
+        }
+        return render(request, "users/index.html", context)
+    
+    # Show all activities the current user had registerd to.
+    context = {
+        "loggedin": True,
+        "aanmeldingen": Aanmelding.objects.filter(gebruiker=request.user)
+    }
+    return render(request, "users/mijn_aanmeldingen.html", context)
