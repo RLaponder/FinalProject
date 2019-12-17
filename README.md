@@ -8,10 +8,10 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 
 ## Ontwerp
 ### Index
-<img src="doc/index_final.png" alt="Index page" width="500"/>
+<img src="doc/index_final.png" alt="Index pagina" width="500"/>
 
 ### Profiel
-![Pagina van persoonlijk profiel](doc/profiel_final.png | width=200)
+<img src="doc/profiel_final.png" alt="Profiel pagina" width="500"/>
 
 ### Activiteiten
-![Activiteitenpagina](doc/activiteiten_final.png | width=200)
+<img src="doc/activiteiten_final.png" alt="Activiteiten pagina" width="500"/>
