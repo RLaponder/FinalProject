@@ -18,7 +18,7 @@ functie: users.views.register<br>
 functionaliteit:<br>
 * **Registreren van een gebruiker**<br>
 <p align="center">
-    <img src="doc/register_functionaliteit_final.png" alt="Index pagina" width="200"/>
+    <img src="doc/register_functionaliteit_final.png" alt="Index pagina" width="300"/>
 </p>
 
 ### Uitloggen<br>
