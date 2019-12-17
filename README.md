@@ -21,3 +21,11 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 <p align="center">
     <img src="doc/activiteiten_final.png" alt="Activiteiten pagina" width="500"/>
 </p>
+
+## Acknowledgement
+* Alle afbeeldingen zijn stockfoto's afkomstig van https://www.pexels.com/nl-nl/
+* Delen van de layout op de index-pagina en profiel-pagina zijn gemaakt door middel van https://nicepage.com/
+* Delen van de layout op alle pagina's zijn gemaakt door middel van Bootstrap (https://getbootstrap.com/)
+
+
+*Copyright (c) 2019-heden, Alle rechten voorbehouden*

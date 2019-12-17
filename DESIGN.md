@@ -5,6 +5,7 @@
 
 url: /''<br>
 functie: socialieven.views.index<br>
+bestanden: index.html<br>
 functionaliteit:<br>
 * **Inloggen**<br>
 <p align="center">
@@ -15,6 +16,7 @@ functionaliteit:<br>
 *Op deze pagina ziet de gebruiker een formulier dat hij/zij moet invullen om zich te registreren.*<br>
 url: /register<br>
 functie: users.views.register<br>
+bestanden: register.html<br>
 functionaliteit:<br>
 * **Registreren van een gebruiker**<br>
 <p align="center">
@@ -25,6 +27,7 @@ functionaliteit:<br>
 *Wanneer een gebruiker is ingelogd, kan hij/zij via de navbar uitloggen.*<br>
 url: /logout<br>
 functie: users.views.logout_view<br>
+bestanden: -
 functionaliteit:<br>
 * **Uitloggen van een gebruiker**<br>
 
@@ -33,6 +36,7 @@ functionaliteit:<br>
 
 url: /activiteiten<br>
 functie: socialieven.views.activiteiten<br>
+bestanden: activiteiten.html<br>
 functionaliteit:<br>
 * **Activiteiten weergeven**<br>
 <p align="center">
@@ -43,14 +47,17 @@ functionaliteit:<br>
 *Een gebruiker kan zich voor een activiteit aanmelden, door op de 'aanmelden'-knop te klikken.*<br>
 url: /aanmelden/id<br>
 functie: socialieven.views.aanmelden<br>
+bestanden: -<br>
 * **Afmelden**<br>
 *Wanneer een gebruiker is aangemeld voor een activiteit, kan hij/zich zich afmelden door op de 'afmelden'-knop te klikken.*<br>
 url: /afmelden/id<br>
 functie: socialieven.views.afmelden<br>
+bestanden: -<br>
 * **Overlast**<br>
 *Een gebruiker kan op de 'overlast'-knop klikken, om overlast te melden van een activiteit. De gebruiker komt op een pagina waarop een formulier ingevuld moet worden, dat vervolgens per mail verzonden wordt aan de organisator van de betreffende activiteit.*<br>
 url: /overlast/id<br>
 functie: socialieven.views.overlast<br>
+bestanden: overlast.html<br>
 functionaliteit:<br>
 * **Overlast melden**<br>
 <p align="center">
@@ -62,6 +69,7 @@ functionaliteit:<br>
 
 url: /nieuwe_activiteit<br>
 functie: socialieven.views.nieuwe_activiteit<br>
+bestanden: nieuwe_activiteit.html<br>
 * **Nieuwe activiteit creëren**<br>
 <p align="center">
     <img src="doc/nieuweactiviteit_functionaliteit_final.png" alt="Index pagina" width="300"/>
@@ -72,6 +80,7 @@ functie: socialieven.views.nieuwe_activiteit<br>
 
 url: /profiel<br>
 functie: users.views.profiel<br>
+bestanden: profiel.html<br>
 functionaliteit:<br>
 * **Persoonlijke informatie bekijken**<br>
 <p align="center">
@@ -83,6 +92,7 @@ functionaliteit:<br>
 
 url: /mijn_activiteiten<br>
 functie: socialieven.views.mijn_activiteiten<br>
+bestanden: mijn_activiteiten.html<br>
 functionaliteit:<br>
 * **Door gebruiker gemaakte activiteiten weergeven**<br>
 
@@ -91,5 +101,6 @@ functionaliteit:<br>
 
 url: /mijn_aanmeldingen<br>
 functie: socialieven.views.mijn_aanmeldingen<br>
+bestanden: mijn_aanmeldingen.html<br>
 functionaliteit:<br>
 * **Weergeven van activiteiten waar gebruiker voor aangemeld is**<br>
