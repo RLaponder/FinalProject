@@ -8,7 +8,9 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 
 ## Ontwerp
 ### Index
-<img align="center" src="doc/index_final.png" alt="Index pagina" width="500"/>
+<p align="center">
+    <img src="doc/index_final.png" alt="Index pagina" width="500"/>
+</p>
 
 ### Profiel
 <img src="doc/profiel_final.png" alt="Profiel pagina" width="500"/>
