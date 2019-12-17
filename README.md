@@ -13,7 +13,11 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 </p>
 
 ### Profiel
-<img src="doc/profiel_final.png" alt="Profiel pagina" width="500"/>
+<p align="center">
+    <img src="doc/profiel_final.png" alt="Profiel pagina" width="500"/>
+</p>
 
 ### Activiteiten
-<img src="doc/activiteiten_final.png" alt="Activiteiten pagina" width="500"/>
+<p align="center">
+    <img src="doc/activiteiten_final.png" alt="Activiteiten pagina" width="500"/>
+</p>
