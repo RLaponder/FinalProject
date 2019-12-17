@@ -8,7 +8,7 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 
 ## Ontwerp
 ### Index
-<img src="doc/index_final.png" alt="Index page" width="200"/>
+<img src="doc/index_final.png" alt="Index page" width="500"/>
 
 ### Profiel
 ![Pagina van persoonlijk profiel](doc/profiel_final.png | width=200)
