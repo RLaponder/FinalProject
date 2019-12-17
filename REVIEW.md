@@ -26,3 +26,5 @@ Ik ben het eens met de feedback die ik heb gekregen van mijn partner, en ik zou 
 * Alle adressen van het complex toevoegen aan de database en bij het registreren controleren of het ingevoerde adres overeenkomt met een van de adressen in de database.
 * Bewoners laten inloggen met hun e-mail, zodat het hebben van een gebruikersnaam niet meer nodig is.
 * Bewoner kan zijn/haar eigen activiteiten aanpassen nadat ze zijn ingediend.
+
+Vooraf dacht ik dat het **werken met een overlast-knop** en **werken me de database** de grootste valkuilen zouden zijn. Achteraf viel dit mee. Het bleek vrij simpel om met Django een mail te versturen. Daarnaast viel het werken met de database ook mee. Als ik wat meer tijd had gehad, had ik me wel graag meer willen verdiepen in de verschillende relaties die models onderling kunnen hebben, aangezien ik het nu vrij simpel heb gehouden.
