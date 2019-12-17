@@ -1,18 +1,35 @@
 # Final Project - technical overview
 
-### Index
-*Dit is de eerste pagina die een gebruiker te zien krijgt en fungeert als homepage.*
+### Index<br>
+*Dit is de eerste pagina die een gebruiker te zien krijgt en fungeert als homepage.*<br>
 
 url: /''<br>
-functie: socialieven.views.<br>
+functie: socialieven.views.index<br>
 functionaliteit:<br>
-* **Inloggen/registreren**<br>
+* **Inloggen**<br>
 <p align="center">
     <img src="doc/index_login_final.png" alt="Index pagina" width="200"/>
 </p>
 
+### Registreren<br>
+*Op deze pagina ziet de gebruiker een formulier dat hij/zij moet invullen om zich te registreren.*<br>
+url: /register<br>
+functie: users.views.register<br>
+functionaliteit:<br>
+* **Registreren van een gebruiker**<br>
+<p align="center">
+    <img src="doc/register_functionaliteit_final.png" alt="Index pagina" width="200"/>
+</p>
+
+### Uitloggen<br>
+*Wanneer een gebruiker is ingelogd, kan hij/zij via de navbar uitloggen.*<br>
+url: /logout<br>
+functie: users.views.logout_view<br>
+functionaliteit:<br>
+* **Uitloggen van een gebruiker**<br>
+
 ### Activiteiten<br>
-*Deze pagina geeft een overzicht van alle activiteiten die zijn gecreëerd door alle gebruikers.*
+*Deze pagina geeft een overzicht van alle activiteiten die zijn gecreëerd door alle gebruikers.*<br>
 
 url: /activiteiten<br>
 functie: socialieven.views.activiteiten<br>
@@ -46,11 +63,33 @@ functionaliteit:<br>
 url: /nieuwe_activiteit<br>
 functie: socialieven.views.nieuwe_activiteit<br>
 * **Nieuwe activiteit creëren**<br>
+<p align="center">
+    <img src="doc/nieuweactiviteit_functionaliteit_final.png" alt="Index pagina" width="300"/>
+</p>
 
 ### Profiel<br>
-*Op deze pagina ziet een gebruiker zijn/haar persoonlijke informatie.*
+*Op deze pagina ziet een gebruiker zijn/haar persoonlijke informatie.*<br>
 
 url: /profiel<br>
 functie: users.views.profiel<br>
 functionaliteit:<br>
 * **Persoonlijke informatie bekijken**<br>
+<p align="center">
+    <img src="doc/profiel_functionaliteit_final.png" alt="Index pagina" width="300"/>
+</p>
+
+### Mijn activiteiten<br>
+*Deze pagina laat zien welke activiteiten gecreëerd zijn door de gebruiker.*<br>
+
+url: /mijn_activiteiten<br>
+functie: socialieven.views.mijn_activiteiten<br>
+functionaliteit:<br>
+* **Door gebruiker gemaakte activiteiten weergeven**<br>
+
+### Mijn aanmeldingen<br>
+*Hier ziet een gebruiker voor welke activiteiten hij/zij zichzelf heeft aangemeld. Voor eigen activiteiten wordt de gebruiker automatisch aangemeld en ook deze activiteiten zijn te zien op deze pagina.*<br>
+
+url: /mijn_aanmeldingen<br>
+functie: socialieven.views.mijn_aanmeldingen<br>
+functionaliteit:<br>
+* **Weergeven van activiteiten waar gebruiker voor aangemeld is**<br>
