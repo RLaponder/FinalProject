@@ -23,12 +23,8 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 </p>
 
 ## Screencast
-[![Screencast]("https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view")]
-https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view
-<a href="https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view" title="Screencast"></a>
-<a href="https://youtu.be/ETka0kPx09E
-" target="_blank"><img src="doc/screencast.png" 
-alt="Screencast" width="240" height="180" border="10" /></a>
+<a href="https://youtu.be/ETka0kPx09E" target="_blank"><img src="doc/screencast.png" 
+alt="Screencast" width="400" height="400" border="10" /></a>
 
 
 ## Dankbetuiging/Acknowledgement
