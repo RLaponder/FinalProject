@@ -27,7 +27,7 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view
 <a href="https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view" title="Screencast"></a>
 <a href="https://youtu.be/ETka0kPx09E
-" target="_blank"><img src="https://youtu.be/ETka0kPx09E/0.jpg" 
+" target="_blank"><img src="http://i3.ytimg.com/vi/ETka0kPx09E/maxresdefault.jpg" 
 alt="Screencast" width="240" height="180" border="10" /></a>
 
 
