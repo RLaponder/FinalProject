@@ -22,6 +22,9 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
     <img src="doc/activiteiten_final.png" alt="Activiteiten pagina" width="500"/>
 </p>
 
+## Screencast
+[![Screencast](doc/screencast.webm)]
+
 ## Dankbetuiging/Acknowledgement
 * Alle afbeeldingen zijn stockfoto's afkomstig van https://www.pexels.com/nl-nl/
 * Delen van de layout op de index-pagina en profiel-pagina zijn gemaakt door middel van https://nicepage.com/
