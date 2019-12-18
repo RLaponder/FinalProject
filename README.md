@@ -23,7 +23,7 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 </p>
 
 ## Screencast
-<iframe src="https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/preview" width="640" height="480"></iframe>
+[![Screencast]("https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/preview")]
 
 ## Dankbetuiging/Acknowledgement
 * Alle afbeeldingen zijn stockfoto's afkomstig van https://www.pexels.com/nl-nl/
