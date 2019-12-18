@@ -26,6 +26,10 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 [![Screencast]("https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view")]
 https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view
 <a href="https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view" title="Screencast"></a>
+<a href="https://youtu.be/ETka0kPx09E
+" target="_blank"><img src="https://youtu.be/ETka0kPx09E/0.jpg" 
+alt="Screencast" width="240" height="180" border="10" /></a>
+
 
 ## Dankbetuiging/Acknowledgement
 * Alle afbeeldingen zijn stockfoto's afkomstig van https://www.pexels.com/nl-nl/
