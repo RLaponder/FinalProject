@@ -23,8 +23,10 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 </p>
 
 ## Screencast
-<a href="https://youtu.be/ETka0kPx09E" target="_blank"><img src="doc/screencast.png" 
-alt="Screencast" width="400" height="400" border="10" /></a>
+<p align="center">
+    <a href="https://youtu.be/ETka0kPx09E" target="_blank"><img src="doc/screencast.png" 
+    alt="Screencast" width="800" height="400" border="10" /></a>
+</p>
 
 
 ## Dankbetuiging/Acknowledgement
