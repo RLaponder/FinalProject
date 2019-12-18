@@ -28,10 +28,8 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
     alt="Screencast" width="800" height="400" border="10" /></a>
 </p>
 <p align="center">
-    <img src="https://media.giphy.com/media/XECr3lxbwG1Nw9DMpA/giphy.gif" width="800" height="400" />
+    <img src="https://media.giphy.com/media/fXVnxZFeTlkbds3RY4/giphy.gif" width="800" height="400" />
 </p>
-![Overlast](https://media.giphy.com/media/XECr3lxbwG1Nw9DMpA/giphy.gif)
-
 
 ## Dankbetuiging/Acknowledgement
 * Alle afbeeldingen zijn stockfoto's afkomstig van https://www.pexels.com/nl-nl/
