@@ -23,7 +23,8 @@ Om bovenstaand probleem op te lossen, heb ik een platform gemaakt waarop bewoner
 </p>
 
 ## Screencast
-[![Screencast]("https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/preview")]
+[![Screencast]("https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view")]
+https://drive.google.com/file/d/1FOfldIdQA-9UNdQC7GJVm8vlQ8A84OVD/view
 
 ## Dankbetuiging/Acknowledgement
 * Alle afbeeldingen zijn stockfoto's afkomstig van https://www.pexels.com/nl-nl/
